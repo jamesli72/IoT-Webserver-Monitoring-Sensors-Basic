@@ -1,0 +1,365 @@
+@font-face {
+    font-family: myFont;
+    src: url(AquireLight-YzE0o.otf);
+}/*Thêm kiểu font ưa chuộng từ bên ngoài và đặt tên cho chúng */
+@font-face {
+    font-family: myFont1;
+    src: url(Autobusbold-1ynL.ttf);
+}
+*{
+    margin:0;
+    padding: 0;
+    font-family: myFont, sans-serif;
+} /*Áp dụng bố cục cho toàn web chỉnh căng lè trái phải trên dưới về không ngoài border(margin) và trong border(padding) */
+
+body{
+    height: 97vh;
+    margin: auto;
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(hex.jpg);
+    background-position: center;
+    background-size: cover;
+} /*Áp dụng bố cục cho phần body của HTML, size cao là 97% để loại bỏ thanh slide bên phải, căng lè trái phải auto ngoài border
+    thêm hình nền cho body áp dụng màu dốc tuyến tính để làm ảnh tối hơn, căn ảnh về giữa, bao trùm ảnh lên toàn body */
+
+.container{
+    width: 100vw;
+    height: 99vh;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+} /*Class chứa nội dung với độ rộng là 100%, dài 99%, lè trái lè phải vào 8%, luôn giữ cho nội dung không bị tràn ra khỏi border  */
+
+.style14 { 
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1));
+  } /*Class trang điểm cho line ngang phân cách giữa nội dung menu và nội dung giữa web */
+
+.navbar{
+    height: 12%;
+    display: flex;
+    align-items: center;
+} /*Class navigation bar căng chỉnh nội dung bên trong với chiều cao vừa đủ dùng 12%, hiển thị các element theo hàng ngang và phân cách đều hai bên giúp cho logo nằm
+    trái và thanh menu nằm phải trong cực kỳ đẹp mắt, căng chỉnh về giữa khu vực */
+
+nav{ 
+    width: 100%;
+    padding: 10px 10%;
+    display: flex;
+    align-items: center;
+    position: relative;
+} /*Tag navigation có chiều ngang, lè trái phải bên trong border, hiển thị ngang phân cách, căng chỉnh giữa, 
+    các vị trí của thành phần cục bộ có sự tương quan bên trong khu vực  */
+
+.logo{
+    width: 60px;
+    cursor: pointer;
+    border-radius: 50%;
+} /*Chỉnh kích thước logo, thay đổi hình con trỏ chuột khi dí zo logo */
+
+.menu-icon{
+    width: 40px;
+    cursor: pointer;
+    margin-left: 30px;
+    border-radius: 10%;
+    transition: transform 0.5s;
+} /* Trang trí cho menu logo, border-radius làm bo tròn viền logo lại, transition thêm hiệu ứng tên tranform*/
+
+.menu-icon:hover{
+    transform: translate(-15px);
+} /*Viết hiệu ứng lùi qua trái 15px */
+
+nav ul{
+    width: 100%;
+    text-align: right;
+} /*Trang trí tag ul bên trong tag nav (tức chỉ có tag ul bên trong tag nav mới được áp dụng) */
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 10px 20px;
+} /*Trang trí tag li loại bỏ bullet, chỉnh lại margin */
+
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+    transition: all 0.3s;
+}/*Trang trí tiếp tag a, loại bỏ màu xanh hiển thị, chữ màu trắng, size chữ 15, thêm hiệu ứng */
+
+nav ul li a:hover {
+    color: #1f19dc;
+}/*Đổi màu đen khi dí chuột vào */
+
+.row{
+    display: flex;
+    height: 88%;
+    align-items: center;
+} /*Trang trí cho khu vực row, hiển thị ngang element có phân cách, khung có chiều cao 88%, căn lè giữa */
+.col{
+    flex-basis: 50%;
+} /*trang trí cho khu vực col, flexing chỉ là vô tình, chỉ flex 50% trong kh vực  */
+
+h1{
+    color: #fff;
+    font-size: 100px;
+} /*trang trí cho header 1 */
+
+p{
+    padding-top: 5px;
+    color: #fff;
+    font-size: 17px;
+    line-height: 15px;
+    text-align: justify;
+    font-family: myFont1;
+} /*trang trí cho đoạn văn */
+
+.glow-on-hover{ 
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}/*Class trang trí cho nút nhấn, loại border loại line khung margin, điều chỉnh tùm lum */
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}/*Hiệu ứng màu viền khi dí chuột vào nút nhấn */
+.glow-on-hover:active {
+    color: #000
+} /*Hiệu ứng màu kích hoạt */
+.glow-on-hover:active:after {
+    background: transparent;
+} /* Hiệu ứng tàng hình sau khi click background hiện full màu mè */
+.glow-on-hover:hover:before {
+    opacity: 1;
+} /* Trước khi click */
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+} 
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+} /*Trượt màu */
+
+
+.card{
+    width: 220px;
+    height: 250px;
+    align-items: baseline;
+    display:inline-table;
+    border-radius: 10px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 15px 20px;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s;
+}/*Xây dựng bố cục cho bốn thẻ khu vực card */
+.card1{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(temp.png);
+}/*Chỉnh màu tối lại */
+.card2{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(humid.png);
+}
+.card3{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(gas.png);
+}
+.card4{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(act.jpg);
+}
+.card:hover{
+    transform: translate(-15px);
+}
+
+.sub-menu-wrap{
+    position: absolute;
+    z-index: 7; 
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(https://www.simplilearn.com/ice9/free_resources_article_thumb/iot_devices.jpg);
+    background-size: cover;
+    background-position: center;
+    top: 90%;
+    right: 15%;
+    width: 300px;
+    border-radius: 10px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}/*Xây dựng bố cục cho menu phụ ở thanh menu đầu web, z-index là mức độ ưu tiên hiển thị khu vực trên web, tạo transition cho menu */
+.sub-menu-wrap.open-menu{
+    max-height: 400px;
+}
+
+.sub-menu{
+    padding: 5px;
+    margin: 10px;
+    
+}  /*Dựng bố cục cho class cục bộ */
+.user-info{
+    display: flex;
+    align-items: center;
+} /* Điều chỉnh hiển thị, trường hợp width khu vực nhỏ thì flex sẽ đưa element xuống dòng */
+.user-info h3{
+    font-weight: 400;
+    color: #e5e5e5;
+} /* kích thước font */
+.user-info img{
+    width: 60px;
+    border-radius: 40%;
+    margin-right: 15px;
+} /* kích thước ảnh */
+.sub-menu hr{
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: #ccc;
+    margin: 15px 0 10px;
+} /* đường line nằm ngang trong sub menu */
+.sub-menu-link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #e5e5e5;
+    margin: 12px 0;
+} /* Các lựa chọn bên dưới */
+.sub-menu-link p{
+    width: 100%;
+} /* Chỉnh độ rộng tag p */
+.sub-menu-link img{
+    width: 40px;
+    background: #e5e5e5f5;
+    border-radius: 50%;
+    padding: 8px;
+    margin-right: 15px;
+} /* điều chỉnh các logo */
+.sub-menu-link span{
+    font-size: 22px;
+    transition: transform 0.5s;
+} /* thêm hiệu ứng cho dấu > */
+.sub-menu-link:hover span{
+    transform: translateX(5px);
+} /* đẩy dấu > sang phải */
+.sub-menu-link:hover p{
+    font-weight: 700;
+} /* Hiệu ứng đậm chữ lựa chọn */
+
+
+
+h5{
+    text-align: center;
+    font-size: medium;
+    color: #ffffff;
+    text-shadow: 0 0 7px #0b07f1;
+}/* Chỉnh màu mè cho header 5 ở các card col */
+
+h4{
+    text-align: center;
+    font-size: large;
+    font-family: myFont1;
+    color: #D3D3D3;
+    padding: 13px;
+}/* Chỉnh màu mè cho các chữ measure bên trong card col */
+
+.card p{
+    text-align: justify;
+    text-shadow: 0 0 2px #f60606;
+    font-size: 15px;
+    padding-top: 10px;
+    color: #FDFD96;
+} /* chỉnh bố cục tag p trong card col */
+
+
+.progress{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+} /*tạo một khu vực chưa hai trang thái toggle button, lúc mở web sẽ thấy 2 thằng gộp thành một là do javascript */
+
+.toggle-btn{
+    width: 70px;
+    height: 35px;
+    background: gray;
+    border-radius: 30px;
+    padding: 5px;
+} /* tạo một hành trình trượt, bo lại cạnh */
+
+.toggle-btn > .inner-circle{
+    width: 35px;
+    height: 35px;
+    background: white;
+    border-radius: 50%;
+}/* hình tròn bên tong nút nhấn, đây là một dạng khai báo khác của một class nằm bên trong một class */
+
+.toggle-btn.active{
+    background: #21ecf3;
+    box-shadow: 0 0 10px #21ecf3, 0 0 40px #21ecf3, 0 0 80px #21ecf3; 
+} /*màu mè lên khi hình tròn bật */
+
+.toggle-btn.active > .inner-circle{
+    margin-left: 35px;
+} /* đưa hình tròn qua trái, dòng này là được thêm vào class inner-circle trước đó vẫn được thừa hưởng các sự điều chỉnh */
+
+footer {
+    position: fixed;
+    width: 100%;
+    padding: 5px;
+    bottom:0;
+    text-align: center;
+    background-color: #1087c7;
+    color: #000;
+  }
+
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+  }
+  /* The slider itself */
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;  
+    background: #d3d3d3;
+    outline: none;
+    margin-bottom: 10px;
+  }   /* tinh chỉnh kích thước cho slider */
+
+  
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #13aabe;
+    cursor: pointer;
+  }   /* tinh chỉnh con trỏ tròn trong slider */
+

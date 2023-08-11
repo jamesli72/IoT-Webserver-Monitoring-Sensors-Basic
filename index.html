@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="EN"> <!--Tag mở đầu html chọn ngôn ngữ là English-->
+<head> <!-- Cấu hình cho web với tag header -->
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">   <!--Cấu hình tag meta-->
+  <!-- Cấu hình meta cho web -->
+  <meta name="keywords" content="HTML, CSS, JavaScript, Beginners">
+  <meta name="description" content="Hello HTML-CSS-JavaScript">
+  <meta name="author" content="James">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cay che cham chi</title>  <!--Tiêu đề xuất hiện trên web-bar-->
+ 
+  <link rel="stylesheet" href="style.css"> <!--Tham chiếu đến đường dẫn file CSS-->
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>  <!--Khai báo thư viện firebase app-->
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script> <!--Khai báo thư viện firebase database-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!--Khai báo thư viện jquery-->
+  <script src = "Script.js"></script> <!-- Tham chiếu đến đường đẫn file JS-->
+</head>
+
+<body> <!-- Lưu ý các bố cục trong html chưa được trang trí và lập trình các hành vi cho chúng-->
+      <div class="container"> <!--Khu vực div đầu tiên được layout bởi class container - có thể hiểu cấp độ của div theo vị trí của nó - đây là div toàn cục -->
+        <div class="navbar">  <!--Khu vực div class navbar - xây dựng thanh menu bar ở đầu trang web -->
+          <img src="logo.jpg" class="logo"> <!--Chèn ảnh logo khoa CLC vào khu vực-->
+          <nav> <!--Navigation tag gọi thẻ mới trong khu vực-->
+            <ul > <!-- Tạo một list ký tự -->
+              <li><a href="">HOME</a></li>  
+              <li><a href="">REGION</a></li>
+              <li><a href="">ABOUT</a></li>
+            </ul>
+            <!-- Chèn một ảnh menu sau list ký tự trên, có thao tác chuột sẽ gọi hàm ở cuối -->
+            <img  title="For more information" src="menu.png" class="menu-icon" onclick="toggleMenu()">
+                    <!--Tạo một phần menu nhỏ liên kết với ảnh vừa chèn -->
+                      <div class="sub-menu-wrap" id="subMenu"> <!--Khu vực này sẽ bao trọn các div cục bộ bên trong và xây dựng bố cục cho chúng-->  
+                        <div class="sub-menu">  <!--Tạo khu vực nhỏ bên trong-->
+                          <div class="user-info">   <!--Khu vực chèn hình cho user 1-->
+                                <img src="huy.jpg">
+                                <h3>James Ly</h3>
+                          </div>
+                          <br><!--Khoảng xuống dòng chia cách hai khu vực-->
+                          <div class="user-info">   <!--Khu vực chèn hình cho user 2-->
+                                <img src="hmc.JPG" height="57">
+                                <h3>Johnathan Huynh</h3>
+                          </div>
+                          <hr> <!-- Tạo một đường line ngang phân cách tùy chọn bên dưới-->
+                          <a href="#" class="sub-menu-link"> <!-- tạo mỗi tag a cho mỗi tùy chọn với class tham chiếu sẽ được viết bên CSS -->
+                              <img src="images/profile.png">
+                              <p>Our Profile</p>
+                              <span>></span>
+                          </a>
+                          <a href="#" class="sub-menu-link">
+                            <img src="images/setting.png">
+                            <p>Settings & Privacy</p>
+                            <span>></span>
+                          </a>
+                          <a href="#" class="sub-menu-link">
+                            <img src="images/help.png">
+                            <p>Help & Support</p>
+                            <span>></span>
+                          </a>
+                        </div>
+                      </div>
+            </nav>
+        </div><!-- Kết thúc phần thanh menu đầu trang web -->
+
+        <hr class="style14"> <!-- Tạo tiếp một đường line phân cách với class tham chiếu sẽ được viết bên CSS -->
+
+        <div class="row"> <!-- Tạo một khu vực mới bên dưới với class là bố cục một hàng ngang sẽ được viết bên CSS-->
+          <div class="col"> <!-- Bên trong hàng ngang tạo một khu vực là cột trái-->
+            <h1>IoT@Lab</h1><br>  <!-- Viết tiêu đề header cho cột trái -->
+            <p> Internet of Things are making a new era of the world technology. With <!-- Viết đoạn văn -->
+              the development of it, all electronic devices are able to connect through 
+              internet and communicate with each others, serving the people life better.
+            </p><br> <!--Xuống hàng-->
+            <a href="iot.pdf" target="_blank"> <!--chèn một thẻ a tham chiếu đến một file pdf cho nút nhấn bên dưới, khi nhấn sẽ hiển thị qua web mới-->
+              <button title="Click to view some detailed" class="glow-on-hover" type="button" >Explore</button> <!-- Tag button với sự trang điểm màu mè của class glow-->
+            </a>
+          </div> <!--Kết thúc cột bên trái -->
+
+          <div class="col"> <!-- Tạo một khu vực cho cột phải -->
+            <div class="card card1"> <!-- Tạo từng khu vực để hiển thị cho từng thẻ -->
+                <h5>Temperature</h5>
+                <p>Hot and cold conditions are the point to growing plant.</p>
+                <h4>Measuring Inner Temp:<br><span id="TempIn">00</span> *C</h4> <!--Tag span với ID sẽ ứng dụng hiển thị số liệu lấy từ firebase với javascript-->
+                <h4>Measuring Outter Temp:<br><span id="TempOut">00</span> *C</h4>
+            </div>
+            <div class="card card2">
+              <h5>Humidity</h5>
+              <p>The high index of humidity the more help the insect growing.</p>
+              <h4>Measuring:<br><span id="Humid">00</span> %</h4>
+            </div>
+            <div class="card card3">
+              <h5>Gas concentration</h5>
+              <p>Please attention with Gas, it's highly causing fire.</p>
+              <h4>Measuring:<br><span id="Gas">00</span> ppm</h4>
+            </div>
+            <div class="card card4">
+              <h5>Actuators Control</h5>
+              <p>You can adjust some monitor here to reduce some value.</p>
+                <div class = "progress">   <!-- Khu vực tạo switch thủ công với hai hiển thị unact (đóng) và act (mở)-->
+                    <div title = "Turn on device" class = "toggle-btn" id ="unact">
+                        <div class = "inner-circle"></div>
+                    </div>
+                    <div title = "Turn off device" class = "toggle-btn active" id ="act">
+                        <div class = inner-circle></div>
+                    </div>
+                    <br>
+                  
+                    <div>
+                        <label style="color: aqua;" for="">Speed</label>
+                    </div>
+                    <br>
+                    <div class="slidecontainer">
+                      <input type="range" min="0" max="255" value="100" class="slider" id="myRange">
+                      <span id="demo" style="color:rgb(12, 255, 158);">00</span>
+                    </div>
+                 
+
+
+                </div>  
+            </div>
+          </div><!--Kết thúc cột bên phải-->
+        </div><!-- Kết thúc bố cục giữa trang web-->
+
+        <!--Có thể thêm bố cục tại đây -->
+        
+      </div> <!--Kết thúc toàn cục-->
+
+      <footer>
+        <small>
+          Copyright © 2023 CAY CHE CHAM CHI FEEE. All Rights Reserved.
+        </small>
+      </footer> <!--Viết footer cho web-->
+
+
+<!--Viết java cho hành vi đóng tắt menu phụ khi có thao tác click chuột -->
+<script>  
+  let subMenu = document.getElementById("subMenu");    /*Gán biến subMenu lấy ID subMenu liên kết với class sub menu warp */
+  function toggleMenu(){
+/*Hàm gọi class open sub menu khi có thao tác, hàm sẽ trả true/false theo thứ tự click chuột theo đó có thêm hoặc bớt class open menu vào class sub menu warp hay không*/
+    subMenu.classList.toggle("open-menu")       
+  }
+</script>
+
+</body>
+</html>
