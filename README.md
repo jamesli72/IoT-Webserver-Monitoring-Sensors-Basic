@@ -13,9 +13,12 @@ Every part of this project is a sample code that shows how to do the following:
 
 ## System diagram && video demo
 Diagram here
+\
 <img src="https://github.com/jamesli72/IoT-Webserver-Monitoring-Sensors-Basic/assets/141984131/6edd5121-629a-43e3-802a-ab3465d60234" width="300" height="300">
-<br />
+\
+\
 Watch this video!!
+\
 [![IoT](https://i9.ytimg.com/vi_webp/WUWywBIfIjc/mqdefault.webp?v=65e14b4b&sqp=CIyVha8G&rs=AOn4CLB9uliV730dZYmvIxG8QoCiDk1kyA)](https://www.youtube.com/watch?v=WUWywBIfIjc&t=90s)
 
 
