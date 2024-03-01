@@ -13,7 +13,7 @@ Every part of this project is a sample code that shows how to do the following:
 
 
 ## System diagram && video demo
-[![IoT](https://img.youtube.com/vi/Vykp29GQEq8)](https://www.youtube.com/watch?v=Vykp29GQEq8)
+[![IoT](https://i9.ytimg.com/vi_webp/WUWywBIfIjc/mqdefault.webp?v=65e14b4b&sqp=CIyVha8G&rs=AOn4CLB9uliV730dZYmvIxG8QoCiDk1kyA)](https://www.youtube.com/watch?v=Vykp29GQEq8)
 
 
 ## How to run this project on VSCode
