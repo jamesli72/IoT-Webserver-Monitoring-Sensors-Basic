@@ -19,7 +19,7 @@ Diagram here
 \
 Watch this video!!
 \
-[![IoT](https://i9.ytimg.com/vi_webp/WUWywBIfIjc/mqdefault.webp?v=65e14b4b&sqp=CIyVha8G&rs=AOn4CLB9uliV730dZYmvIxG8QoCiDk1kyA)](https://www.youtube.com/watch?v=WUWywBIfIjc&t=90s)
+[![IoT](https://github.com/jamesli72/Crop-Monitoring-IoT-Basic/assets/141984131/f8f034c2-d07a-4b41-8b7d-ab206a697d05)](https://www.youtube.com/watch?v=WUWywBIfIjc&t=90s)
 
 
 ## How to run this project on VSCode
